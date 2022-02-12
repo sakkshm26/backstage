@@ -28,12 +28,17 @@ import {
   entityRouteRef,
   DefaultStarredEntitiesApi
 } from '@backstage/plugin-catalog-react';
+import { ConfigApi, configApiRef } from '@backstage/core-plugin-api';
+import { ConfigReader } from '@backstage/config';
 import {
   HomePageSearchBar,
   SearchContextProvider,
   searchApiRef,
   searchPlugin,
 } from '@backstage/plugin-search';
+import {
+  HomePageStackOverflowQuestions
+} from '@backstage/plugin-stack-overflow';
 import { Grid, makeStyles } from '@material-ui/core';
 import React, { ComponentType } from 'react';
 
@@ -62,6 +67,11 @@ export default {
                 }),
               ],
               [searchApiRef, { query: () => Promise.resolve({ results: [] }) }],
+              [configApiRef, new ConfigReader({
+                stackoverflow: {
+                  baseUrl: 'https://api.stackexchange.com/2.2',
+                },
+              })],
             ]}
           >
             <Story />
@@ -135,10 +145,7 @@ export const DefaultTemplate = () => {
                 />
               </Grid>
               <Grid item xs={12} md={6}>
-                <InfoCard title="Composable Section">
-                  {/* placeholder for content */}
-                  <div style={{ height: 210 }} />
-                </InfoCard>
+                <HomePageStackOverflowQuestions/>
               </Grid>
               <Grid item xs={12} md={6}>
                 <InfoCard title="Composable Section">

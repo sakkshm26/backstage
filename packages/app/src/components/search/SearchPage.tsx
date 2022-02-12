@@ -39,6 +39,7 @@ import {
   useSearch,
 } from '@backstage/plugin-search';
 import { DocsResultListItem } from '@backstage/plugin-techdocs';
+import { StackOverflowResultListItem } from '@backstage/plugin-stack-overflow';
 import { Grid, List, makeStyles, Paper, Theme } from '@material-ui/core';
 import React, { useContext } from 'react';
 
@@ -87,6 +88,11 @@ const SearchPage = () => {
                   {
                     value: 'techdocs',
                     name: 'Documentation',
+                    icon: <DocsIcon />,
+                  },
+                  {
+                    value: 'stack-overflow',
+                    name: 'Stack Overflow',
                     icon: <DocsIcon />,
                   },
                 ]}
@@ -148,6 +154,13 @@ const SearchPage = () => {
                             result={document}
                           />
                         );
+                    case 'stack-overflow':
+                      return (
+                        <StackOverflowResultListItem
+                          key={document.location}
+                          result={document}
+                        />
+                      );
                       default:
                         return (
                           <DefaultResultListItem

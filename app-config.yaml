@@ -464,3 +464,6 @@ apacheAirflow:
 
 gocd:
   baseUrl: https://your.gocd.instance.com
+
+stackoverflow:
+  baseUrl: https://api.stackexchange.com/2.2 # alternative: your internal stack overflow instance

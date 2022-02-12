@@ -11585,6 +11585,7 @@ evp_bytestokey@^1.0.0, evp_bytestokey@^1.0.3:
     "@backstage/plugin-search" "^0.6.2"
     "@backstage/plugin-sentry" "^0.3.36"
     "@backstage/plugin-shortcuts" "^0.1.22"
+    "@backstage/plugin-stack-overflow" "^0.0.0"
     "@backstage/plugin-tech-insights" "^0.1.8"
     "@backstage/plugin-tech-radar" "^0.5.5"
     "@backstage/plugin-techdocs" "^0.13.3"

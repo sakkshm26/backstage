@@ -28,6 +28,7 @@ import {
   SearchEngine,
 } from '@backstage/plugin-search-backend-node';
 import { DefaultTechDocsCollator } from '@backstage/plugin-techdocs-backend';
+import { StackOverflowQuestionsCollator } from '@backstage/plugin-stack-overflow';
 import { Logger } from 'winston';
 import { PluginEnvironment } from '../types';
 
@@ -69,7 +70,7 @@ export default async function createPlugin({
   // Collators are responsible for gathering documents known to plugins. This
   // particular collator gathers entities from the software catalog.
   indexBuilder.addCollator({
-    defaultRefreshIntervalSeconds: 600,
+    defaultRefreshIntervalSeconds: 60,
     collator: DefaultCatalogCollator.fromConfig(config, {
       discovery,
       tokenManager,
@@ -77,11 +78,19 @@ export default async function createPlugin({
   });
 
   indexBuilder.addCollator({
-    defaultRefreshIntervalSeconds: 600,
+    defaultRefreshIntervalSeconds: 60,
     collator: DefaultTechDocsCollator.fromConfig(config, {
       discovery,
       logger,
       tokenManager,
+    }),
+  });
+
+  indexBuilder.addCollator({
+    defaultRefreshIntervalSeconds: 60,
+    collator: new StackOverflowQuestionsCollator({ 
+      config, 
+      params: '?tagged=backstage&site=stackoverflow' 
     }),
   });
 
