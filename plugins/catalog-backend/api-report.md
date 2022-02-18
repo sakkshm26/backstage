@@ -22,7 +22,6 @@ import { IndexableDocument } from '@backstage/search-common';
 import { JsonObject } from '@backstage/types';
 import { JsonValue } from '@backstage/types';
 import { Location as Location_2 } from '@backstage/catalog-client';
-import { LocationSpec } from '@backstage/catalog-model';
 import { Logger as Logger_2 } from 'winston';
 import { Permission } from '@backstage/plugin-permission-common';
 import { PermissionAuthorizer } from '@backstage/plugin-permission-common';
@@ -911,13 +910,23 @@ export type LocationEntityProcessorOptions = {
   integrations: ScmIntegrationRegistry;
 };
 
+// @public
+export interface LocationInput {
+  // @deprecated (undocumented)
+  presence?: 'optional' | 'required';
+  // (undocumented)
+  target: string;
+  // (undocumented)
+  type: string;
+}
+
 // Warning: (ae-missing-release-tag) "LocationService" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
 //
 // @public (undocumented)
 export interface LocationService {
   // (undocumented)
   createLocation(
-    spec: LocationSpec,
+    location: LocationInput,
     dryRun: boolean,
     options?: {
       authorizationToken?: string;
@@ -947,12 +956,19 @@ export interface LocationService {
   }): Promise<Location_2[]>;
 }
 
+// @public
+export type LocationSpec = {
+  type: string;
+  target: string;
+  presence?: 'optional' | 'required';
+};
+
 // Warning: (ae-missing-release-tag) "LocationStore" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
 //
 // @public (undocumented)
 export interface LocationStore {
   // (undocumented)
-  createLocation(spec: LocationSpec): Promise<Location_2>;
+  createLocation(location: LocationInput): Promise<Location_2>;
   // (undocumented)
   deleteLocation(id: string): Promise<void>;
   // (undocumented)
@@ -1168,5 +1184,5 @@ export class UrlReaderProcessor implements CatalogProcessor {
 
 // Warnings were encountered during analysis:
 //
-// src/ingestion/processors/GithubMultiOrgReaderProcessor.d.ts:25:9 - (ae-forgotten-export) The symbol "GithubMultiOrgConfig" needs to be exported by the entry point index.d.ts
+// src/ingestion/processors/GithubMultiOrgReaderProcessor.d.ts:24:9 - (ae-forgotten-export) The symbol "GithubMultiOrgConfig" needs to be exported by the entry point index.d.ts
 ```
