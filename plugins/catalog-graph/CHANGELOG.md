@@ -1,5 +1,15 @@
 # @backstage/plugin-catalog-graph
 
+## 0.2.12
+
+### Patch Changes
+
+- 6e1cbc12a6: Updated according to the new `getEntityFacets` catalog API method
+- Updated dependencies
+  - @backstage/plugin-catalog-react@0.7.0
+  - @backstage/catalog-model@0.11.0
+  - @backstage/catalog-client@0.7.2
+
 ## 0.2.11
 
 ### Patch Changes

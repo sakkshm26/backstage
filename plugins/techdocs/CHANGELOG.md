@@ -1,5 +1,20 @@
 # @backstage/plugin-techdocs
 
+## 0.14.0
+
+### Minor Changes
+
+- 2262fe19c9: **BREAKING**: Removed support for passing in an explicit `entity` prop to entity page extensions, which has been deprecated for a long time. This is only a breaking change at the TypeScript level, as this property was already ignored.
+
+### Patch Changes
+
+- Updated dependencies
+  - @backstage/plugin-catalog@0.9.0
+  - @backstage/plugin-catalog-react@0.7.0
+  - @backstage/catalog-model@0.11.0
+  - @backstage/integration@0.7.5
+  - @backstage/plugin-search@0.7.1
+
 ## 0.13.4
 
 ### Patch Changes

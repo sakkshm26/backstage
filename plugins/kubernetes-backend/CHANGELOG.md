@@ -1,5 +1,14 @@
 # @backstage/plugin-kubernetes-backend
 
+## 0.4.10
+
+### Patch Changes
+
+- 64acf65c03: Allow missing kubernetes config in development env
+- Updated dependencies
+  - @backstage/catalog-model@0.11.0
+  - @backstage/plugin-kubernetes-common@0.2.5
+
 ## 0.4.9
 
 ### Patch Changes

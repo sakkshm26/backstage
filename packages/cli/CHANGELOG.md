@@ -1,5 +1,16 @@
 # @backstage/cli
 
+## 0.14.1
+
+### Patch Changes
+
+- 5cc7f48400: Fixed a bug in the built-in Jest configuration that prevented it from identifying packages that had migrated to using the new package scripts to run tests.
+- 49ae6c9573: chore(deps-dev): bump `@types/rollup-plugin-postcss` from 2.0.1 to 3.1.4
+- d2e9d2a34f: chore(deps): bump `@hot-loader/react-dom` from 16.13.0 to 17.0.2
+- c2f3a548cf: Fix building of backends with `repo build --all`, where it would previously only work if the build was executed within the backend package.
+- Updated dependencies
+  - @backstage/config-loader@0.9.6
+
 ## 0.14.0
 
 ### Minor Changes

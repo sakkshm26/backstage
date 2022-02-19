@@ -1,5 +1,11 @@
 # @backstage/catalog-model
 
+## 0.11.0
+
+### Minor Changes
+
+- 7010349c9a: **BREAKING**: Removed `EntityRelationSpec` as it is only used during the catalog during the catalog processing.
+
 ## 0.10.1
 
 ### Patch Changes

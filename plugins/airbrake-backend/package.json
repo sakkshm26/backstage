@@ -19,8 +19,8 @@
     "clean": "backstage-cli clean"
   },
   "dependencies": {
-    "@backstage/backend-common": "^0.10.8",
-    "@backstage/config": "^0.1.14",
+    "@backstage/backend-common": "^0.10.9",
+    "@backstage/config": "^0.1.15",
     "@types/express": "*",
     "express": "^4.17.1",
     "express-promise-router": "^4.1.0",

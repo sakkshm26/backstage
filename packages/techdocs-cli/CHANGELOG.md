@@ -1,5 +1,14 @@
 # @techdocs/cli
 
+## 0.8.15
+
+### Patch Changes
+
+- 209fd128e6: Updated usage of `github:` location types in docs to use `url:` instead.
+- Updated dependencies
+  - @backstage/catalog-model@0.11.0
+  - @backstage/techdocs-common@0.11.10
+
 ## 0.8.14
 
 ### Patch Changes

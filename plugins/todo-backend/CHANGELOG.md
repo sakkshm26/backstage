@@ -1,5 +1,15 @@
 # @backstage/plugin-todo-backend
 
+## 0.1.24
+
+### Patch Changes
+
+- 6e1cbc12a6: Updated according to the new `getEntityFacets` catalog API method
+- Updated dependencies
+  - @backstage/catalog-model@0.11.0
+  - @backstage/integration@0.7.5
+  - @backstage/catalog-client@0.7.2
+
 ## 0.1.23
 
 ### Patch Changes

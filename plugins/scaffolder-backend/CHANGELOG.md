@@ -1,5 +1,46 @@
 # @backstage/plugin-scaffolder-backend
 
+## 0.17.0
+
+### Minor Changes
+
+- 7f193ff019: - **BREAKING** - `DatabaseTaskStore()` constructor is now removed. Please use the `DatabaseTaskStore.create()` method instead.
+
+  - **BREAKING** - `TaskStore.createTask()` method now only takes one argument of type `TaskStoreCreateTaskOptions` which encapsulates the `spec` and `secrets`
+
+  ```diff
+  - TaskStore.createTask(spec, secrets)
+  + TaskStore.createTask({ spec, secrets})
+  ```
+
+  - **BREAKING** - `TaskBroker.dispatch()` method now only takes one argument of type `TaskBrokerDispatchOptions` which encapsulates the `spec` and `secrets`
+
+  ```diff
+  - TaskBroker.dispatch(spec, secrets)
+  + TaskBroker.dispatch({ spec, secrets})
+  ```
+
+### Patch Changes
+
+- 6981ac4ad2: - **DEPRECATED** - The `containerRunner` option passed to `createBuiltinActions` has now been deprecated.
+
+  - **DEPRECATED** - The `createFetchCookiecutterAction` export has also been deprecated and will soon disappear from this plugin.
+
+  The `fetch:cookiecutter` action will soon be removed from the default list of actions that are provided out of the box from the scaffolder plugin. It will still be supported, and maintained by the community, so you can install the package (`@backstage/plugin-scaffolder-backend-module-cookiecutter`) and pass it in as a custom action. Or you can migrate your templates to use [`fetch:template`](https://backstage.io/docs/features/software-templates/builtin-actions#migrating-from-fetchcookiecutter-to-fetchtemplate) with the `cookiecutterCompat` option.
+
+- 0f37cdef19: Migrated over from the deprecated `spec.metadata` to `spec.templateInfo` for the `name` and the `baseUrl` of the template.
+- 7f193ff019: - **DEPRECATED** - `Status` has been deprecated in favour of `TaskStatus`
+  - **DEPRECATED** - `CompletedTaskState` has been deprecated in favour of `TaskCompletionState`
+  - **DEPRECATED** - `DispatchResult` has been deprecated in favour of `TaskBrokerDispatchResult`
+- df61ca71dd: Implemented required `getProcessorName` method for catalog processor.
+- Updated dependencies
+  - @backstage/plugin-catalog-backend@0.22.0
+  - @backstage/plugin-scaffolder-common@0.2.2
+  - @backstage/catalog-model@0.11.0
+  - @backstage/plugin-scaffolder-backend-module-cookiecutter@0.2.2
+  - @backstage/integration@0.7.5
+  - @backstage/catalog-client@0.7.2
+
 ## 0.16.1
 
 ### Patch Changes

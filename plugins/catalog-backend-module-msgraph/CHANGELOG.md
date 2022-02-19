@@ -1,5 +1,15 @@
 # @backstage/plugin-catalog-backend-module-msgraph
 
+## 0.2.17
+
+### Patch Changes
+
+- 25e97e7242: Minor wording update
+- df61ca71dd: Implemented required `getProcessorName` method for catalog processor.
+- Updated dependencies
+  - @backstage/plugin-catalog-backend@0.22.0
+  - @backstage/catalog-model@0.11.0
+
 ## 0.2.16
 
 ### Patch Changes

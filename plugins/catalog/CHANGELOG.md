@@ -1,5 +1,23 @@
 # @backstage/plugin-catalog
 
+## 0.9.0
+
+### Minor Changes
+
+- e7b9c3d713: Removed `columnFactories`, which was accidentally exported on the previous release.
+- 2262fe19c9: **BREAKING**: Removed support for passing in an explicit `entity` prop to entity page extensions, which has been deprecated for a long time. This is only a breaking change at the TypeScript level, as this property was already ignored.
+- 3c4376e5e7: **BREAKING**: Removed the old `plugin` export, use `catalogPlugin` instead.
+
+### Patch Changes
+
+- a686702dbe: Renamed `CatalogResultListItem` to `CatalogSearchResultListItem` along with its prop type, leaving the old names in place as a deprecations.
+- 852d5ff758: Added `EntitySwitchProps` type for `EntitySwitch`.
+- 6e1cbc12a6: Updated according to the new `getEntityFacets` catalog API method
+- Updated dependencies
+  - @backstage/plugin-catalog-react@0.7.0
+  - @backstage/catalog-model@0.11.0
+  - @backstage/catalog-client@0.7.2
+
 ## 0.8.0
 
 ### Minor Changes

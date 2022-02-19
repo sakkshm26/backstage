@@ -1,5 +1,15 @@
 # @backstage/plugin-catalog-backend-module-ldap
 
+## 0.3.14
+
+### Patch Changes
+
+- 25e97e7242: Minor wording update
+- df61ca71dd: Implemented required `getProcessorName` method for catalog processor.
+- Updated dependencies
+  - @backstage/plugin-catalog-backend@0.22.0
+  - @backstage/catalog-model@0.11.0
+
 ## 0.3.13
 
 ### Patch Changes

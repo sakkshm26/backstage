@@ -1,5 +1,18 @@
 # @backstage/plugin-scaffolder
 
+## 0.12.4
+
+### Patch Changes
+
+- 6e1cbc12a6: Updated according to the new `getEntityFacets` catalog API method
+- 0f37cdef19: Migrated over from the deprecated `spec.metadata` to `spec.templateInfo` for the `name` and the `baseUrl` of the template.
+- Updated dependencies
+  - @backstage/plugin-scaffolder-common@0.2.2
+  - @backstage/plugin-catalog-react@0.7.0
+  - @backstage/catalog-model@0.11.0
+  - @backstage/integration@0.7.5
+  - @backstage/catalog-client@0.7.2
+
 ## 0.12.3
 
 ### Patch Changes

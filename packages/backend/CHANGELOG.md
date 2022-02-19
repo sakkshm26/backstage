@@ -5,6 +5,29 @@
 ### Patch Changes
 
 - Updated dependencies
+  - @backstage/plugin-catalog-backend@0.22.0
+  - @backstage/plugin-scaffolder-backend@0.17.0
+  - @backstage/plugin-kubernetes-backend@0.4.10
+  - @backstage/plugin-auth-backend@0.11.0
+  - @backstage/catalog-model@0.11.0
+  - @backstage/plugin-badges-backend@0.1.21
+  - @backstage/plugin-todo-backend@0.1.24
+  - @backstage/plugin-scaffolder-backend-module-rails@0.3.2
+  - @backstage/integration@0.7.5
+  - @backstage/catalog-client@0.7.2
+  - example-app@0.2.66
+  - @backstage/plugin-auth-node@0.1.3
+  - @backstage/plugin-code-coverage-backend@0.1.25
+  - @backstage/plugin-jenkins-backend@0.1.16
+  - @backstage/plugin-kafka-backend@0.2.20
+  - @backstage/plugin-tech-insights-backend@0.2.7
+  - @backstage/plugin-techdocs-backend@0.13.6
+
+## 0.2.66
+
+### Patch Changes
+
+- Updated dependencies
   - @backstage/backend-common@0.10.9
   - @backstage/backend-tasks@0.1.8
   - @backstage/catalog-client@0.7.1

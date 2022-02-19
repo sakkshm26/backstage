@@ -1,5 +1,14 @@
 # @backstage/plugin-explore
 
+## 0.3.31
+
+### Patch Changes
+
+- 6e1cbc12a6: Updated according to the new `getEntityFacets` catalog API method
+- Updated dependencies
+  - @backstage/plugin-catalog-react@0.7.0
+  - @backstage/catalog-model@0.11.0
+
 ## 0.3.30
 
 ### Patch Changes

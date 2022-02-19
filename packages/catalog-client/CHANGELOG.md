@@ -1,5 +1,16 @@
 # @backstage/catalog-client
 
+## 0.7.2
+
+### Patch Changes
+
+- 6e1cbc12a6: Added `CatalogApi.getEntityFacets`. Marking this as a breaking change since it
+  is a non-optional addition to the API and depends on the backend being in place.
+  If you are mocking this interface in your tests, you will need to add an extra
+  `getEntityFacets: jest.fn()` or similar to that interface.
+- Updated dependencies
+  - @backstage/catalog-model@0.11.0
+
 ## 0.7.1
 
 ### Patch Changes

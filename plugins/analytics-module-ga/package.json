@@ -24,7 +24,7 @@
     "clean": "backstage-cli package clean"
   },
   "dependencies": {
-    "@backstage/config": "^0.1.14",
+    "@backstage/config": "^0.1.15",
     "@backstage/core-components": "^0.8.9",
     "@backstage/core-plugin-api": "^0.6.1",
     "@backstage/theme": "^0.2.15",
@@ -38,9 +38,9 @@
     "react": "^16.13.1 || ^17.0.0"
   },
   "devDependencies": {
-    "@backstage/cli": "^0.14.0",
+    "@backstage/cli": "^0.14.1",
     "@backstage/core-app-api": "^0.5.3",
-    "@backstage/dev-utils": "^0.2.22",
+    "@backstage/dev-utils": "^0.2.23",
     "@backstage/test-utils": "^0.2.5",
     "@testing-library/jest-dom": "^5.10.1",
     "@testing-library/react": "^11.2.5",
