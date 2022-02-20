@@ -15,16 +15,13 @@
  */
 
 import React, {
-  PropsWithChildren,
-  ComponentType,
-  createContext,
   useContext,
   useCallback,
   useEffect,
   useRef,
   useState,
 } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Grid, makeStyles, useTheme } from '@material-ui/core';
 
 import { EntityName } from '@backstage/catalog-model';
@@ -52,7 +49,7 @@ import {
 
 import { TechDocsSearch } from '../TechDocsSearch';
 import { TechDocsStateIndicator } from '../TechDocsStateIndicator';
-import { useReaderState } from '../useReaderState';
+import { useTechDocsReader, TechDocsReaderProvider } from './context';
 
 type Props = {
   entityRef: EntityName;
@@ -71,55 +68,6 @@ const useStyles = makeStyles<BackstageTheme>(theme => ({
     },
   },
 }));
-
-type TechDocsReaderValue = ReturnType<typeof useReaderState>;
-
-const TechDocsReaderContext = createContext<TechDocsReaderValue>(
-  {} as TechDocsReaderValue,
-);
-
-const TechDocsReaderProvider = ({
-  children,
-  entityRef,
-}: PropsWithChildren<{ entityRef: EntityName }>) => {
-  const { '*': path } = useParams();
-  const { kind, namespace, name } = entityRef;
-  const value = useReaderState(kind, namespace, name, path);
-  return (
-    <TechDocsReaderContext.Provider value={value}>
-      {children}
-    </TechDocsReaderContext.Provider>
-  );
-};
-
-/**
- * Note: this HOC is currently being exported so that we can rapidly
- * iterate on alternative <Reader /> implementations that extend core
- * functionality. There is no guarantee that this HOC will continue to be
- * exported by the package in the future!
- *
- * todo: Make public or stop exporting (ctrl+f "altReaderExperiments")
- * @internal
- */
-export const withTechDocsReaderProvider =
-  <T extends {}>(Component: ComponentType<T>, entityRef: EntityName) =>
-  (props: T) =>
-    (
-      <TechDocsReaderProvider entityRef={entityRef}>
-        <Component {...props} />
-      </TechDocsReaderProvider>
-    );
-
-/**
- * Note: this hook is currently being exported so that we can rapidly
- * iterate on alternative <Reader /> implementations that extend core
- * functionality. There is no guarantee that this hook will continue to be
- * exported by the package in the future!
- *
- * todo: Make public or stop exporting (ctrl+f "altReaderExperiments")
- * @internal
- */
-export const useTechDocsReader = () => useContext(TechDocsReaderContext);
 
 /**
  * Hook that encapsulates the behavior of getting raw HTML and applying
