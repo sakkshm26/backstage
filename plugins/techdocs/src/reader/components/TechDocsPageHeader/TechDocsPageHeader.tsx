@@ -24,8 +24,8 @@ import {
 } from '@backstage/plugin-catalog-react';
 import CodeIcon from '@material-ui/icons/Code';
 import React from 'react';
-import { rootRouteRef } from '../../routes';
-import { TechDocsEntityMetadata, TechDocsMetadata } from '../../types';
+import { rootRouteRef } from '../../../routes';
+import { TechDocsEntityMetadata, TechDocsMetadata } from '../../../types';
 
 export type TechDocsPageHeaderProps = {
   entityRef: EntityName;

@@ -33,7 +33,7 @@ import { scmIntegrationsApiRef } from '@backstage/integration-react';
 import { BackstageTheme } from '@backstage/theme';
 import { SidebarPinStateContext } from '@backstage/core-components';
 
-import { techdocsStorageApiRef } from '../../api';
+import { techdocsStorageApiRef } from '../../../api';
 
 import {
   addBaseUrl,
@@ -48,11 +48,11 @@ import {
   scrollIntoAnchor,
   transform as transformer,
   copyToClipboard,
-} from '../transformers';
+} from '../../transformers';
 
-import { TechDocsSearch } from './TechDocsSearch';
-import { TechDocsStateIndicator } from './TechDocsStateIndicator';
-import { useReaderState } from './useReaderState';
+import { TechDocsSearch } from '../TechDocsSearch';
+import { TechDocsStateIndicator } from '../TechDocsStateIndicator';
+import { useReaderState } from '../useReaderState';
 
 type Props = {
   entityRef: EntityName;

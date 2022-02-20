@@ -18,7 +18,7 @@ import { TechDocsPageHeader } from './TechDocsPageHeader';
 import { act } from '@testing-library/react';
 import { renderInTestApp } from '@backstage/test-utils';
 import { entityRouteRef } from '@backstage/plugin-catalog-react';
-import { rootRouteRef } from '../../routes';
+import { rootRouteRef } from '../../../routes';
 
 describe('<TechDocsPageHeader />', () => {
   it('should render a techdocs page header', async () => {

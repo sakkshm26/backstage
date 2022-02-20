@@ -28,7 +28,7 @@ import Autocomplete from '@material-ui/lab/Autocomplete';
 import React, { ChangeEvent, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
 import useDebounce from 'react-use/lib/useDebounce';
-import { DocsResultListItem } from '../../components/DocsResultListItem';
+import { DocsResultListItem } from '../../../components/DocsResultListItem';
 
 type TechDocsSearchProps = {
   entityId: EntityName;
