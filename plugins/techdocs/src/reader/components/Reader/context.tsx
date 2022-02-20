@@ -28,6 +28,7 @@ import { useReaderState } from '../useReaderState';
 
 type TechDocsReaderValue = ReturnType<typeof useReaderState> & {
   entityName: EntityName;
+  isReady?: boolean;
   setReady: () => void;
 };
 
@@ -37,19 +38,21 @@ const TechDocsReaderContext = createContext<TechDocsReaderValue>(
 
 type TechDocsReaderProviderProps = PropsWithChildren<{
   entityName: EntityName;
+  isReady?: boolean;
   onReady?: () => void;
 }>;
 
 export const TechDocsReaderProvider = ({
   children,
   entityName,
+  isReady,
   onReady = () => {},
 }: TechDocsReaderProviderProps) => {
   const { '*': path } = useParams();
   const { kind, namespace, name } = entityName;
   const state = useReaderState(kind, namespace, name, path);
 
-  const value = { ...state, entityName, setReady: onReady };
+  const value = { ...state, entityName, isReady, setReady: onReady };
 
   return (
     <TechDocsReaderContext.Provider value={value}>
@@ -71,11 +74,16 @@ export const withTechDocsReaderProvider =
   <T extends {}>(
     Component: ComponentType<T>,
     entityName: EntityName,
+    isReady?: boolean,
     onReady?: () => void,
   ) =>
   (props: T) =>
     (
-      <TechDocsReaderProvider entityName={entityName} onReady={onReady}>
+      <TechDocsReaderProvider
+        entityName={entityName}
+        isReady={isReady}
+        onReady={onReady}
+      >
         <Component {...props} />
       </TechDocsReaderProvider>
     );
