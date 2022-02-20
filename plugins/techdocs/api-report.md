@@ -11,12 +11,16 @@ import { BackstagePlugin } from '@backstage/core-plugin-api';
 import { Config } from '@backstage/config';
 import { CSSProperties } from '@material-ui/styles';
 import { DiscoveryApi } from '@backstage/core-plugin-api';
+import { default as DOMPurify_2 } from 'dompurify';
 import { Entity } from '@backstage/catalog-model';
 import { EntityName } from '@backstage/catalog-model';
 import { FetchApi } from '@backstage/core-plugin-api';
 import { IdentityApi } from '@backstage/core-plugin-api';
 import { LocationSpec } from '@backstage/catalog-model';
+import { PropsWithChildren } from 'react';
 import { default as React_2 } from 'react';
+import { ReactElement } from 'react';
+import { ReactNode } from 'react';
 import { RouteRef } from '@backstage/core-plugin-api';
 import { TableColumn } from '@backstage/core-components';
 import { TableProps } from '@backstage/core-components';
@@ -181,15 +185,16 @@ export const isTechDocsAvailable: (entity: Entity) => boolean;
 // @public (undocumented)
 export type PanelType = 'DocsCardGrid' | 'DocsTable';
 
-// Warning: (ae-forgotten-export) The symbol "Props" needs to be exported by the entry point index.d.ts
+// Warning: (ae-forgotten-export) The symbol "ReaderProps" needs to be exported by the entry point index.d.ts
 // Warning: (ae-missing-release-tag) "Reader" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
 //
 // @public (undocumented)
 export const Reader: ({
   entityRef,
+  isReady,
   onReady,
-  withSearch,
-}: Props_3) => JSX.Element;
+  ...rest
+}: ReaderProps) => JSX.Element;
 
 // Warning: (ae-missing-release-tag) "Router" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
 //
@@ -274,12 +279,26 @@ export type TechDocsPageHeaderProps = {
   techDocsMetadata?: TechDocsMetadata;
 };
 
+// Warning: (ae-missing-release-tag) "TechDocsPageLayout" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
+//
+// @public (undocumented)
+export const TechDocsPageLayout: ({
+  children,
+}: PropsWithChildren<{}>) => JSX.Element;
+
 // Warning: (ae-missing-release-tag) "TechDocsPageProps" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
 //
 // @public (undocumented)
 export type TechDocsPageProps = {
-  children?: TechDocsPageRenderFunction | React_2.ReactNode;
+  children?: TechDocsPageRenderFunction | ReactNode;
 };
+
+// Warning: (ae-missing-release-tag) "TechDocsPageProvider" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
+//
+// @public (undocumented)
+export const TechDocsPageProvider: ({
+  children,
+}: PropsWithChildren<{}>) => JSX.Element;
 
 // Warning: (ae-missing-release-tag) "TechDocsPageRenderFunction" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
 //
@@ -292,6 +311,7 @@ export type TechDocsPageRenderFunction = ({
   techdocsMetadataValue?: TechDocsMetadata | undefined;
   entityMetadataValue?: TechDocsEntityMetadata | undefined;
   entityRef: EntityName;
+  isReady: boolean;
   onReady: () => void;
 }) => JSX.Element;
 
@@ -330,6 +350,60 @@ export { techdocsPlugin };
 export const TechDocsReaderPage: ({
   children,
 }: TechDocsPageProps) => JSX.Element;
+
+// Warning: (ae-forgotten-export) The symbol "TechDocsReaderProviderProps" needs to be exported by the entry point index.d.ts
+// Warning: (ae-missing-release-tag) "TechDocsReaderProvider" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
+//
+// @public (undocumented)
+export const TechDocsReaderProvider: ({
+  children,
+  entityName,
+  isReady,
+  onReady,
+}: TechDocsReaderProviderProps) => JSX.Element;
+
+// Warning: (ae-forgotten-export) The symbol "TechDocsShadowDomProps" needs to be exported by the entry point index.d.ts
+// Warning: (ae-missing-release-tag) "TechDocsShadowDom" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
+//
+// @public (undocumented)
+export const TechDocsShadowDom: ({
+  host,
+  source,
+  config,
+  hooks,
+  children,
+  onAttached,
+}: TechDocsShadowDomProps) => JSX.Element | null;
+
+// Warning: (ae-forgotten-export) The symbol "SanitizeParameters" needs to be exported by the entry point index.d.ts
+// Warning: (ae-missing-release-tag) "TechDocsShadowDomConfig" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
+//
+// @public (undocumented)
+export type TechDocsShadowDomConfig = Omit<
+  SanitizeParameters[1],
+  'WHOLE_DOCUMENT' | 'RETURN_DOM'
+>;
+
+// Warning: (ae-forgotten-export) The symbol "HookName" needs to be exported by the entry point index.d.ts
+// Warning: (ae-forgotten-export) The symbol "HookCallback" needs to be exported by the entry point index.d.ts
+// Warning: (ae-missing-release-tag) "TechDocsShadowDomHooks" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
+//
+// @public (undocumented)
+export type TechDocsShadowDomHooks = Partial<Record<HookName, HookCallback>>;
+
+// Warning: (ae-forgotten-export) The symbol "TechDocsShadowDomValue" needs to be exported by the entry point index.d.ts
+// Warning: (ae-missing-release-tag) "TechDocsShadowDomProvider" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
+//
+// @public (undocumented)
+export const TechDocsShadowDomProvider: ({
+  dom,
+  children,
+}: PropsWithChildren<TechDocsShadowDomValue>) => JSX.Element;
+
+// Warning: (ae-missing-release-tag) "TechDocsShadowDomSource" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
+//
+// @public (undocumented)
+export type TechDocsShadowDomSource = SanitizeParameters[0];
 
 // @public
 export interface TechDocsStorageApi {
@@ -388,6 +462,17 @@ export class TechDocsStorageClient implements TechDocsStorageApi {
     logHandler?: (line: string) => void,
   ): Promise<SyncResult>;
 }
+
+// Warning: (ae-forgotten-export) The symbol "TechDocsPageValue" needs to be exported by the entry point index.d.ts
+// Warning: (ae-missing-release-tag) "useTechDocsPage" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
+//
+// @public (undocumented)
+export const useTechDocsPage: () => TechDocsPageValue;
+
+// Warning: (ae-missing-release-tag) "useTechDocsShadowDom" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
+//
+// @public (undocumented)
+export const useTechDocsShadowDom: () => HTMLElement;
 
 // Warnings were encountered during analysis:
 //
