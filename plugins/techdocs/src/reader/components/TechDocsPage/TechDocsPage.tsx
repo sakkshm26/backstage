@@ -20,7 +20,7 @@ import { useOutlet } from 'react-router';
 import { EntityName } from '@backstage/catalog-model';
 import { Page } from '@backstage/core-components';
 
-import { LegacyTechDocsPage } from './LegacyTechDocsPage';
+import { TechDocsPageLayout } from '../TechDocsPageLayout';
 import { TechDocsEntityMetadata, TechDocsMetadata } from '../../../types';
 import { TechDocsPageProvider } from './context';
 
@@ -46,7 +46,7 @@ export const TechDocsPage = ({ children }: TechDocsPageProps) => {
   if (!children) {
     return (
       <TechDocsPageProvider>
-        {outlet || <LegacyTechDocsPage />}
+        <TechDocsPageLayout>{outlet}</TechDocsPageLayout>
       </TechDocsPageProvider>
     );
   }
