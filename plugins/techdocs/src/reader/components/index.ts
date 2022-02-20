@@ -17,6 +17,7 @@
 export * from './Reader';
 export * from './TechDocsPage';
 export * from './TechDocsPageHeader';
+export * from './TechDocsPageLayout';
 export * from './TechDocsStateIndicator';
 
 /**
