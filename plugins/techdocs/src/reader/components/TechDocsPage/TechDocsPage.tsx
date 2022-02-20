@@ -19,6 +19,7 @@ import { useOutlet } from 'react-router';
 
 import { EntityName } from '@backstage/catalog-model';
 import { Page } from '@backstage/core-components';
+import { techDocsPage } from '@backstage/plugin-techdocs-mkdocs';
 
 import { TechDocsPageLayout } from '../TechDocsPageLayout';
 import { TechDocsEntityMetadata, TechDocsMetadata } from '../../../types';
@@ -46,7 +47,7 @@ export const TechDocsPage = ({ children }: TechDocsPageProps) => {
   if (!children) {
     return (
       <TechDocsPageProvider>
-        <TechDocsPageLayout>{outlet}</TechDocsPageLayout>
+        <TechDocsPageLayout>{outlet || techDocsPage}</TechDocsPageLayout>
       </TechDocsPageProvider>
     );
   }
